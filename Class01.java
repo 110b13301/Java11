@@ -1,7 +1,7 @@
-abstract class CShape               // 定義抽象類別CShape
+abstract class CShape
 {
-   protected String color;       // 資料成員
-   public void setColor(String str)    // 一般的函數
+   protected String color;
+   public void setColor(String str)
    {
       color=str;
    }
@@ -10,9 +10,9 @@ abstract class CShape               // 定義抽象類別CShape
    }
    public CShape() { //1 create empty constructor
    }
-   public abstract void show(); // 抽象函數，只有定義名稱，沒有定義處理方式
+   public abstract void show();
 }
-class CRectangle extends CShape    // 定義子類別CRectangle
+class CRectangle extends CShape
 {
    protected int width,height;
    public CRectangle(int w,int h)
@@ -20,20 +20,20 @@ class CRectangle extends CShape    // 定義子類別CRectangle
       width=w;
       height=h;
    }
-   public void show()      // 明確定義繼承自抽象類別的show() method
+   public void show()
    {
       System.out.print("color="+color+",  ");
       System.out.println("area="+width*height);
    }
 }
-class CCircle extends CShape     // 定義子類別CCircle
+class CCircle extends CShape
 {
    protected double radius;
    public CCircle(double r)
    {
       radius=r;
    }
-   public void show()     // 明確定義繼承自抽象類別的show() method
+   public void show()
    {
       System.out.print("color="+color+",  ");
       System.out.println("area="+3.14*radius*radius);
@@ -43,11 +43,10 @@ public class Class01 {
    public static void main(String args[])
    {
       CRectangle rect=new CRectangle(5,10);
-      rect.setColor("Yellow");   // 呼叫父類別裡的setColor() method
-      rect.show();         // 呼叫CRectangle類別裡的show() method
-
+      rect.setColor("Yellow");
+      rect.show();
       CCircle cir=new CCircle(2.0);
-      cir.setColor("Green");     // 呼叫父類別裡的setColor() method
-      cir.show();             // 呼叫CCircl類別裡的show() method
+      cir.setColor("Green");
+      cir.show();
    }
 }
